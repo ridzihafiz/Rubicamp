@@ -1,7 +1,16 @@
 function romawi(n) {
+    var angka = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+    var roma = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
+    var hasil = '';
 
+    for (var i = 12; i >= 0; i--) {
+        while (n >= angka[i]) {
+            n = n - angka[i];
+            hasil = hasil + roma[i];
+        }
+    }
+    return hasil;
 }
-
 console.log("Script Testing untuk Konversi Romawi\n");
 console.log("Input | Expected | Result");
 console.log("----- | -------- | ------");
