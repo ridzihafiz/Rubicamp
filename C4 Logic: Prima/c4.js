@@ -6,8 +6,10 @@ function isPrime(param1) {
         var isPrime = true;
         number++;
         for (var i = 2; i <= Math.sqrt(number); i++) { // pengecekan bil prima
-            if (number % i == 0)
-                isPrime = false       
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
         }
         // return param1 > 1
         if (isPrime) {
