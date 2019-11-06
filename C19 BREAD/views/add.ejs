@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Add Form</title>
 </head>
+
 <body>
-    <form action="" method="post">
-        <input type="text" name="nama" value="" placeholder="masukkan nama">
-        <input type="text" name="umur" value="" placeholder="masukkan umur">
-        <button type="submit" name="button">Tambah</button>
+    <p><h2>Add Data</h2></p>
+    <br>
+    <form class="" action="" method="post">
+        <div class="form-group">
+            <label for="formGroupExampleInput">ID</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="id" value="" placeholder="ID">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">String</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" name="string" value=""
+                placeholder="String">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput3">Integer</label>
+            <input type="text" class="form-control" id="formGroupExampleInput3" name="integer" value=""
+                placeholder="Integer">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput4">Float</label>
+            <input type="text" class="form-control" id="formGroupExampleInput4" name="float" value=""
+                placeholder="Float">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput5">Date</label>
+            <input type="text" class="form-control" id="formGroupExampleInput5" name="date" value=""
+                placeholder="Date">
+        </div>
+        <div class="col-auto my-1">
+                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Choose the boolean ...</option>
+                  <option value="1">True</option>
+                  <option value="2">False</option>
+                </select>
+              </div>
+        <button class="btn btn-success" type="submit" name="button">Tambah</button>
     </form>
 </body>
+
 </html>
