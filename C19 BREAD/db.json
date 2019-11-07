@@ -1,0 +1,22 @@
+[
+   {
+      "string": "satu satu",
+      "integer": "11",
+      "float": "1.5",
+      "date": "2019-12-04"
+   },
+   {
+      "string": "Mantap",
+      "integer": "44",
+      "float": "9.9",
+      "date": "2019-11-23",
+      "boolean": "False"
+   },
+   {
+      "string": "Malam",
+      "integer": "9",
+      "float": "4.7",
+      "date": "2019-11-05",
+      "boolean": "True"
+   }
+]
