@@ -1,16 +1,18 @@
 [
    {
-      "string": "Mantap",
-      "integer": "44",
-      "float": "9.9",
-      "date": "2019-11-23",
-      "boolean": "False"
+      "id": 1573482336644,
+      "string": "nirvana",
+      "integer": "22",
+      "float": "2.5",
+      "date": "2019-12-12",
+      "boolean": "True"
    },
    {
-      "string": "Malam",
-      "integer": "9",
-      "float": "4.7",
-      "date": "2019-11-05",
-      "boolean": "True"
+      "id": 1573482341094,
+      "string": "tidur",
+      "integer": "990",
+      "float": "4.9",
+      "date": "2019-12-20",
+      "boolean": "False"
    }
 ]

@@ -24,11 +24,11 @@ app.get('/', (req, res) => res.render('list', { data: data }))
 
 app.get('/add', (req, res) => res.render('add'))
 
-app.get('/edit/:id', (req, res) => res.render('edit', {data: data}))
+// app.get('/edit/:id', (req, res) => res.render('edit', {data: data}))
 
 app.post('/add', (req, res) => {
     data.push({
-        id: req.body.id,
+        id: Date.now(),
         string: req.body.string,
         integer: req.body.integer,
         float: req.body.float,
@@ -36,9 +36,12 @@ app.post('/add', (req, res) => {
         boolean: req.body.boolean
     })
     write(data);
+    // fs b
     // fs.writeFileSync('db.json', JSON.stringify(data, null, 3))
     res.redirect('/')
 })
+
+
 
 app.get('/delete/:id', (req, res) => {
     let id = req.params.id
@@ -47,11 +50,18 @@ app.get('/delete/:id', (req, res) => {
     res.redirect('/')
 })
 
+
+
 app.get('/edit/:id', (req, res) => {
     let id = req.params.id
-    // data.splice(id, 1);
+    // item karena di edit.ejs item.id, item.boolean dll
+    res.render('edit', { item: data[id] });
+});
+
+app.post('/edit/:id', (req, res) => {
+    let id = req.params.id
     data[id] = ({
-        id: req.body.id,
+        id: Date.now(),
         string: req.body.string,
         integer: req.body.integer,
         float: req.body.float,
@@ -62,20 +72,6 @@ app.get('/edit/:id', (req, res) => {
     res.redirect('/')
 })
 
-app.post('/edit/:id', (req, res) => {
-    let id = req.params.id
-    // data.splice(id, 1);
-    data[id] = ({
-        id: req.body.id,
-        string: req.body.string,
-        integer: req.body.integer,
-        float: req.body.float,
-        date: req.body.date,
-        boolean: req.body.boolean
-    })
-    write(data);
-    res.redirect('/')
-})
 
 
 app.listen(3019, () => {
