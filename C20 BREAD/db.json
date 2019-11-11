@@ -1,5 +1,11 @@
 [
    {
+      "string": "satu satu",
+      "integer": "11",
+      "float": "1.5",
+      "date": "2019-12-04"
+   },
+   {
       "string": "Mantap",
       "integer": "44",
       "float": "9.9",

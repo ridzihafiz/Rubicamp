@@ -11,7 +11,16 @@
 </head>
 
 <body>
-    <% data.forEach((item, index) => {%>
+        <% rows.forEach((item, index) => {%>
+            <!-- <tr>
+                <td><%= item.id %></td>
+                <td><%= item.string %></td>
+                <td><%= item.integer %></td>
+                <td><%= item.float %></td>
+                <td><%= item.date %></td>
+                <td><%= item.boolean %></td>
+            </tr> -->
+           
 
     <p>
         <div class="col-sm-10">
@@ -31,8 +40,8 @@
         <div class="col-auto my-3 row">
             <label for="formGroupExampleInput2" class="col-sm-2 col-form-label">String</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="formGroupExampleInput2" name="string"
-                    value="<%= item.string %>" placeholder="String">
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="string" value="<%= item.string %>"
+                    placeholder="String">
             </div>
         </div>
         <div class="col-auto my-3 row">
@@ -73,9 +82,7 @@
             </div>
         </div>
     </form>
-
-    <!-- <% }) %> -->
-
+    <% }) %>
 </body>
 
 </html>

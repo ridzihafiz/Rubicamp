@@ -32,7 +32,7 @@ VALUES
 /*DOSEN*/
 CREATE TABLE dosen(
     nip TEXT PRIMARY KEY NOT NULL,
-    nama_dosen
+    nama_dosen VARCHAR(50)
 );
 
 INSERT INTO dosen(nip, nama_dosen)

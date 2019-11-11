@@ -47,6 +47,21 @@ app.get('/delete/:id', (req, res) => {
     res.redirect('/')
 })
 
+app.get('/edit/:id', (req, res) => {
+    let id = req.params.id
+    // data.splice(id, 1);
+    data[id] = ({
+        id: req.body.id,
+        string: req.body.string,
+        integer: req.body.integer,
+        float: req.body.float,
+        date: req.body.date,
+        boolean: req.body.boolean
+    })
+    write(data);
+    res.redirect('/')
+})
+
 app.post('/edit/:id', (req, res) => {
     let id = req.params.id
     // data.splice(id, 1);
@@ -62,6 +77,7 @@ app.post('/edit/:id', (req, res) => {
     res.redirect('/')
 })
 
-app.listen(3000, () => {
-    console.log('web ini berjalan di port 3000');
+
+app.listen(3019, () => {
+    console.log('web ini berjalan di port 3019');
 })
