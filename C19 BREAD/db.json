@@ -1,18 +1,18 @@
 [
    {
-      "id": 1573482336644,
-      "string": "nirvana",
-      "integer": "22",
+      "id": 1573521773746,
+      "string": "kurt cobain",
+      "integer": "44",
       "float": "2.5",
       "date": "2019-12-12",
       "boolean": "True"
    },
    {
-      "id": 1573482341094,
-      "string": "tidur",
-      "integer": "990",
-      "float": "4.9",
-      "date": "2019-12-20",
-      "boolean": "False"
+      "id": 1573522669223,
+      "string": "ff",
+      "integer": "",
+      "float": "",
+      "date": "",
+      "boolean": ""
    }
 ]

@@ -18,6 +18,9 @@
         </div>
     </p>
     
+    <% rows.forEach((item, index) => {%>
+
+
     <form class="" action="" method="post">
         <fieldset disabled>
             <div class="col-auto my-3 row">
@@ -65,13 +68,16 @@
             <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">Boolean</label>
             <div class="col-sm-10">
                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="boolean">
-                    <option selected>Choose the boolean ...</option>
+                    <option selected value="">Choose the boolean ...</option>
                     <option value="True" <%= item.boolean == "True" ? "selected" : "" %>>True</option>
                     <option value="False" <%= item.boolean == "False" ? "selected" : "" %>>False</option>
                 </select>
             </div>
         </div>
         
+        <% }) %>
+
+
         <div class="col-auto my-3 row">
             <div class="col-sm-10">
                 <button class="btn btn-success" type="submit" name="button">Simpan</button>

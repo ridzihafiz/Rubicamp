@@ -54,8 +54,8 @@ app.get('/delete/:id', (req, res) => {
 
 app.get('/edit/:id', (req, res) => {
     let id = req.params.id
-    // item karena di edit.ejs item.id, item.boolean dll
-    res.render('edit', { item: data[id] });
+    
+    res.render('edit', { item: data[id] }); // item karena di edit.ejs item.id, item.boolean dll
 });
 
 app.post('/edit/:id', (req, res) => {
