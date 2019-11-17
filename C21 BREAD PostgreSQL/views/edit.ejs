@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Edit Form</title>
+</head>
+
+<body>
+
+    <p>
+        <div class="col-sm-10">
+            <h2 class="font-weight-bold">Edit Data</h2>
+        </div>
+    </p>
+    
+    <% data.forEach((item, index) => {%>
+
+
+    <form class="" action="" method="post">
+        <fieldset disabled>
+            <div class="col-auto my-3 row">
+                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="id" value="<%= item.id %>"
+                        placeholder="ID">
+                </div>
+            </div>
+        </fieldset>
+        
+        <div class="col-auto my-3 row">
+            <label for="formGroupExampleInput2" class="col-sm-2 col-form-label">String</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="string" value="<%= item.string %>"
+                    placeholder="String">
+            </div>
+        </div>
+        
+        <div class="col-auto my-3 row">
+            <label for="formGroupExampleInput3" class="col-sm-2 col-form-label">Integer</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="formGroupExampleInput3" name="integer" value="<%= item.integer %>"
+                    placeholder="Integer">
+            </div>
+        </div>
+        
+        <div class="col-auto my-3 row">
+            <label for="formGroupExampleInput4" class="col-sm-2 col-form-label">Float</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="formGroupExampleInput4" name="float" value="<%= item.float %>"
+                    placeholder="Float">
+            </div>
+        </div>
+        
+        <div class="col-auto my-3 row">
+            <label for="example-date-input" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="example-date-input" name="date" value="<%= moment(item.date).format('YYYY-MM-DD') %>"
+                    placeholder="10/31/2000">
+            </div>
+        </div>
+        
+        <div class="col-auto my-3 row">
+            <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">Boolean</label>
+            <div class="col-sm-10">
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="boolean">
+                    <option selected value="">Choose the boolean ...</option>
+                    <option value="True" <%= item.boolean == "True" ? "selected" : "" %>>True</option>
+                    <option value="False" <%= item.boolean == "False" ? "selected" : "" %>>False</option>
+                </select>
+            </div>
+        </div>
+        
+        <% }) %>
+
+
+        <div class="col-auto my-3 row">
+            <div class="col-sm-10">
+                <button class="btn btn-success" type="submit" name="button">Simpan</button>
+                <a class="btn btn-warning" href="/">Batal</a>
+            </div>
+        </div>
+    
+    </form>
+</body>
+
+</html>

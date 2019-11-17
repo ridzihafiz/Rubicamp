@@ -133,7 +133,7 @@ app.get('/', (req, res) => {
     }
     // console.log(sql);
     
-    db.all(sql, (err, count) => {
+    db.all(sql, [], (err, count) => {
         let row = count[0].total
         let page = req.query.page || 1;
         let limit = 3;
@@ -149,8 +149,9 @@ app.get('/', (req, res) => {
         sql += ` LIMIT ${limit} OFFSET ${pages} `
         // console.log(sql);
 
-        db.all(sql, (err, rows) => {
-
+        db.all(sql, [], (err, rows) => {
+            console.log(rows);
+            
             res.render('list', { data: rows, pages: totalPage, current: page, query: queries })
         })
         // console.log('ini =>', row);
