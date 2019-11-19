@@ -14,7 +14,7 @@
     <div class="container">
         <p class="font-weight-bold">
             <h2>
-                Challange 20
+                Challange 22
             </h2>
         </p>
         <hr>
@@ -31,7 +31,7 @@
                 <label for="formGroupExampleInput2" class="col-sm-2 col-form-label"><input type="checkbox"
                         name="cbString">String</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="formGroupExampleInput2" name="string" value=""
+                    <input type="text" class="form-control" id="formGroupExampleInput2" name="stringd" value=""
                         placeholder="String">
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <label for="formGroupExampleInput3" class="col-sm-2 col-form-label"><input type="checkbox"
                         name="cbInteger">Integer</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="formGroupExampleInput3" name="integer" value=""
+                    <input type="text" class="form-control" id="formGroupExampleInput3" name="integerd" value=""
                         placeholder="Integer">
                 </div>
             </div>
@@ -49,14 +49,14 @@
                 <label for="formGroupExampleInput4" class="col-sm-2 col-form-label"><input type="checkbox"
                         name="cbFloat">Float</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="formGroupExampleInput4" name="float" value=""
+                    <input type="text" class="form-control" id="formGroupExampleInput4" name="floatd" value=""
                         placeholder="Float">
                 </div>
             </div>
 
             <div class="col-auto my-3 row">
                 <label for="example-date-input" class="col-sm-2 col-form-label"><input type="checkbox"
-                        name="date">Date From</label>
+                        name="dated">Date From</label>
                 <div class="col-sm-10">
                     <input type="date" class="form-control" id="example-date-input" name="sDate" value=""
                         placeholder="10/31/2000">
@@ -71,7 +71,7 @@
                 <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect"><input type="checkbox"
                         name="cbBoolean">Boolean</label>
                 <div class="col-sm-10">
-                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="boolean">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="booleand">
                         <option selected value="">Choose the boolean ...</option>
                         <option value="True">True</option>
                         <option value="False">False</option>
@@ -80,7 +80,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Cari</button>
-
+            <a href="/" class="btn btn-warning">Reset</a>
         </form>
 
         <br>
@@ -98,17 +98,17 @@
                 </tr>
             </thead>
             <tbody>
-                <% data.forEach((item, index) => {%>
+                <% data.forEach((item) => {%>
                 <tr>
-                    <td><%= item.id %></td>
-                    <td><%= item.string %></td>
-                    <td><%= item.integer %></td>
-                    <td><%= item.float %></td>
-                    <td><%= item.date %></td>
-                    <td><%= item.boolean %></td>
+                    <td><%= item._id %></td>
+                    <td><%= item.stringd %></td>
+                    <td><%= item.integerd %></td>
+                    <td><%= item.floatd %></td>
+                    <td><%= item.dated %></td>
+                    <td><%= item.booleand %></td>
                     <td>
-                        <a class="btn btn-success" href="edit/<%= item.id %>">Edit</a>
-                        <a class="btn btn-danger" href="delete/<%= item.id %>">Delete</a>
+                        <a class="btn btn-success" href="edit/<%= item._id %>">Edit</a>
+                        <a class="btn btn-danger" href="delete/<%= item._id %>">Delete</a>
                     </td>
                 </tr>
                 <% }) %>
@@ -118,15 +118,15 @@
 
         <nav aria-label="Page navigation example" style="margin-top:1%">
             <ul class="pagination">
-                <li class="page-item <%#= current == 1 ? 'disabled' : ''%>"><a class="page-link"
-                        href="<%#= query.replace(`page=${parseInt(current)}`, `page=${parseInt(current) - 1}`) %>">Previous</a>
+                <li class="page-item <%= page == 1 ? 'disabled' : ''%>"><a class="page-link"
+                        href="/?page=<%= parseInt(page) - 1 %>">Previous</a>
                 </li>
-                <%# for(let i = 1; i <= pages; i++){ %>
-                <li class="page-item <%#= current == i ? 'active' : '' %>"><a class="page-link"
-                        href="<%#= query.replace(`page=${current}`, `page=${i}`) %>"><%#= i %></a></li>
-                <%# } %>
-                <li class="page-item <%#= current == pages ? 'disabled' : ''%>"><a class="page-link"
-                        href="<%#= query.replace(`page=${parseInt(current)}`, `page=${parseInt(current) + 1}`) %>">Next</a>
+                <% for(let i = 1; i <= pages; i++){ %>
+                <li class="page-item <%= page == i ? 'active' : '' %>"><a class="page-link"
+                        href="/?page=<%= i %>"><%= i %></a></li>
+                <% } %>
+                <li class="page-item <%= page == pages ? 'disabled' : ''%>"><a class="page-link"
+                        href="/?page=<%= parseInt(page) + 1 %>">Next</a>
                 </li>
             </ul>
         </nav>

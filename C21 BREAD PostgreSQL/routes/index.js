@@ -5,6 +5,17 @@ moment().format();
 
 module.exports = (pool) => {
 
+    // router.get('/', function (req, res, next) {
+    //     sql = `SELECT * FROM "TableC21"`
+    
+    //     pool.query(sql, (err, result) => {
+    //       console.log(result.rows);
+    
+    //       res.render('list', { data: result.rows})
+    //       // client.end()
+    //     });
+    //   });
+
     router.get('/', (req, res) => {
         const {
             id, string, integer, float, date, boolean,
@@ -72,7 +83,7 @@ module.exports = (pool) => {
             let pages = (page - 1) * limit
             let queries = req.url === '/' ? '/?page=1' : req.url;
 
-            sql = `SELECT * FROM "TableC21"`;
+            sql = `SELECT * FROM "TableC21" ORDER BY id`;
             if (stat == true) {
                 sql += ` where ${joindata}`
             }
